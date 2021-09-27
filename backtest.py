@@ -30,6 +30,7 @@ arkk.rename(columns={'open ARKK':'open','close ARKK':'close','change ARKK':'chan
 #when hourly change of QQQ - beta* hourly change of ARKK > threashold, we will sell QQQ and buy ARKK
 #when hourly change of QQQ - beta* hourly change of ARKK < -threashold, we will buy QQQ and sell ARKK
 #beta is the coefficient in the regression in the test_stationary.py file
+#threashold is determined arbitrarily. A higher threashold will have higher winning rate but not necessarily higher return
 j = 1
 qqq_buy_price = 0
 arkk_buy_price = 0
