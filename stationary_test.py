@@ -5,7 +5,7 @@ import statsmodels.api as sm
 from scipy import stats as st
 import statsmodels.tsa.stattools as ts
 
-#read the data containing OHLC hourly data of QQQ and ARKK
+#read the data containing 5 years OHLC hourly data of QQQ and ARKK
 data = pd.read_csv('QQQ.csv')
 data2 = pd.read_csv('ARKK.csv')
 
