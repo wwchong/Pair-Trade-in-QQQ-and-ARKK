@@ -6,5 +6,5 @@ In the test_stationary.py file, I will test whether the return of QQQ and the re
 so we can develop a pair trade strategy on them.
 
 In the backtest.py file, I will backtest the strategy using the result from test_stationary.py file. 
-The cumulative return of the strategy from 2017 to 2021 is about 74.5%.
-The Sharpe ratio is 3.28.
+The cumulative return of the strategy from 2017 to 2021 is about 115%.
+The Sharpe ratio is 3.80 and the winning ratio is 0.64.
