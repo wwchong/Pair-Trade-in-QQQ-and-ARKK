@@ -3,8 +3,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 #read the data containing OHLC hourly data of QQQ and ARKK
-data = pd.read_csv('QQQ.csv')
-data2 = pd.read_csv('ARKK.csv')
+data = pd.read_csv('QQQ_5Y_5mins.csv')
+data2 = pd.read_csv('ARKK_5Y_5mins.csv')
 
 #change the date columne to datetime object
 data['date'] = pd.to_datetime(data['date'])
