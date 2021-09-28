@@ -5,9 +5,9 @@ import statsmodels.api as sm
 from scipy import stats as st
 import statsmodels.tsa.stattools as ts
 
-#read the data containing 5 years OHLC hourly data of QQQ and ARKK
-data = pd.read_csv('QQQ.csv')
-data2 = pd.read_csv('ARKK.csv')
+#read the data containing 5 years OHLC 5-mins data of QQQ and ARKK
+data = pd.read_csv('QQQ_5Y_5mins.csv')
+data2 = pd.read_csv('ARKK_5Y_5mins.csv')
 
 #calculate the % change of the close price and set date as index
 data['change'] = data['close'].pct_change()
@@ -28,16 +28,17 @@ model = model.fit()
 print(model.summary())
 
 #calculate the residual using the coefficient estimated in the regression
-merged['res'] = merged['change QQQ'] - 0.4969*merged['change ARKK']
+merged['res'] = merged['change QQQ'] - 0.482*merged['change ARKK']
 plt.plot(merged['res'])
+plt.show()
 
 #run Augmented Dickey–Fuller test is to test the residual is white noise and print the test statistic
-#the test statistic is about -17 so we can reject the null hypothesis that there is unit root
+#the test statistic is about -36 so we can reject the null hypothesis that there is unit root
 print("The test statistic of Augmented Dickey–Fuller test is " + str(ts.adfuller(merged['res'])[0]))
 
 #run t test to check whether the mean of the residual is equal to 0
 #the p-value is larger than 0.05 so we do not reject the null hypothesis that the mean is 0
-a = st.ttest_1samp(a=merged['change QQQ'][1:]-0.4969*merged['change ARKK'][1:],popmean=0)
+a = st.ttest_1samp(a=merged['change QQQ'][1:]-0.482*merged['change ARKK'][1:],popmean=0)
 print("The p-value of the t-test is " + str(a.pvalue))
 
 #Therefore, QQQ and ARKK show features of cointegration and we can develop a long-short strategy using them
