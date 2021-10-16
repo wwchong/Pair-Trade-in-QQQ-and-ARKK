@@ -7,4 +7,4 @@ so we can develop a pair trade strategy on them.
 
 In the backtest.py file, I will backtest the strategy using the result from test_stationary.py file. 
 The cumulative return of the strategy from 2017 to 2021 is about 115%.
-The Sharpe ratio is 1.50 and the winning ratio is 0.64.
+The daily Sharpe ratio is 1.50 and the winning ratio is 0.64.
