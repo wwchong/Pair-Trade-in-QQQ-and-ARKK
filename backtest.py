@@ -214,7 +214,7 @@ print("Cumulative Return: " + str(principal/10000-1))
 daily_principal_dataframe = pd.DataFrame({'principal':daily_principal_dict.values()},index=daily_principal_dict.keys())
 daily_principal_dataframe['change'] = daily_principal_dataframe['principal'].pct_change()
 daily_principal_dataframe['Cum_return'] = daily_principal_dataframe['change'].add(1).cumprod().sub(1)
-print("Strategy's Daily Sharpe Ratio: " + str(daily_principal_dataframe['Cum_return'].mean()/(daily_principal_dataframe['Cum_return'].std())))
+print("Strategy's Annual Sharpe Ratio: " + str(daily_principal_dataframe['change'].mean()*255/(daily_principal_dataframe['change'].std()*np.sqrt(255))))
 
 #winning rate of the strategy
 print("Winning rate: " + str(win/trade))
