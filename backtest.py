@@ -145,7 +145,7 @@ while j<len(arkk)-1:
                 holding_qqq = 0
                 holding_arkk = 0
                 continue
-    if qqq.index[j].hour == 14:
+    if qqq.index[j].hour == 14 and qqq.index[j].minute == 45:
         if buy_qqq == True:
             if mark == False:
                 temp_principal = principal
@@ -167,6 +167,8 @@ while j<len(arkk)-1:
         daily_principal_dict[arkk.index[j]] = principal
         daily_principal.append(principal)
         daily_return.append(daily_principal[-1]/daily_principal[-2]-1)
+
+      
     
     j += 1
     
